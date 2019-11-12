@@ -77,8 +77,8 @@ class NewStateless extends StatelessWidget {
                   Icon(Icons.error,color: Colors.green,),
                   Icon(Icons.fingerprint,color: Colors.green,),
 
-                  Icon(MyIcons.book,color: Colors.purple,),
-                  Icon(MyIcons.wechat,color: Colors.green,),
+//                  Icon(MyIcons.book,color: Colors.purple,),
+//                  Icon(MyIcons.wechat,color: Colors.green,),
                 ],
               ),
             ],
