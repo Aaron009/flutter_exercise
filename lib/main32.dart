@@ -54,6 +54,22 @@ class _AlignExampleState extends State<AlignExample> {
             ),
           ),
 
+          // FractionalOffset 便宜坐标
+          Padding(
+            padding: EdgeInsets.only(top: 10),
+            child: Container(
+              height: 120.0,
+              width: 120.0,
+              color: Colors.blue[50],
+              child: Align(
+                alignment: FractionalOffset(1, 1),
+                child: FlutterLogo(
+                  size: 60,
+                ),
+              ),
+            )
+          ),
+
         ],
       ),
     );
