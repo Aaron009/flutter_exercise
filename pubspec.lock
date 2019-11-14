@@ -92,6 +92,13 @@ packages:
       url: "https://mirrors.cloud.tencent.com/dart-pub"
     source: hosted
     version: "0.1.2"
+  english_words:
+    dependency: "direct main"
+    description:
+      name: english_words
+      url: "https://mirrors.cloud.tencent.com/dart-pub"
+    source: hosted
+    version: "3.1.5"
   flutter:
     dependency: "direct main"
     description: flutter
