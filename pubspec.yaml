@@ -77,6 +77,8 @@ flutter:
 
   assets:
     - assets/images/avatar.png
+    - imgs/
+    - images/
 #    - fonts:
 #        - family: icomoon  #指定一个字体名
 #          fonts:
