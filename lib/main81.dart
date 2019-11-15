@@ -18,10 +18,8 @@ class AnimationExample extends StatefulWidget {
   _AnimationExampleState createState() => _AnimationExampleState();
 }
 
-class _AnimationExampleState extends State<AnimationExample> with SingleTickerProviderStateMixin {
-
-
-
+class _AnimationExampleState extends State<AnimationExample>
+    with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,10 +37,12 @@ class _AnimationExampleState extends State<AnimationExample> with SingleTickerPr
           ],
         ),
       ),
-      floatingActionButton: FlatButton.icon(onPressed: () {
-        controller.reset();
-        controller.forward();
-      }, icon: Icon(Icons.add), label: null),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            controller.reset();
+            controller.forward();
+          }),
     );
   }
 
@@ -56,6 +56,19 @@ class _AnimationExampleState extends State<AnimationExample> with SingleTickerPr
         duration: const Duration(seconds: 3), vsync: this);
     //图片宽高从0变到300
     animation = new Tween(begin: 0.0, end: 300.0).animate(controller);
+
+    // 有关更多事件
+    // https://book.flutterchina.club/chapter9/animation_structure.html
+    animation.addStatusListener((status) {
+      if (status == AnimationStatus.completed) { // 动画在终点停止
+        //动画执行结束时反向执行动画
+        controller.reverse();
+      } else if (status == AnimationStatus.dismissed) { // 动画在起始点停止
+        //动画恢复到初始状态时执行动画（正向）
+        controller.forward();
+      }
+    });
+
     //启动动画
     controller.forward();
   }
@@ -73,13 +86,9 @@ class GrowTransition extends StatelessWidget {
           animation: animation,
           builder: (BuildContext context, Widget child) {
             return new Container(
-                height: animation.value,
-                width: animation.value,
-                child: child
-            );
+                height: animation.value, width: animation.value, child: child);
           },
-          child: child
-      ),
+          child: child),
     );
   }
 }
