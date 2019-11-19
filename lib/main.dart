@@ -3,8 +3,11 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'CommentTest.dart';
-
-void main() => runApp(MyApp());
+import 'main96.dart' as main96;
+void main() {
+//  runApp(MyApp());
+  runApp(main96.MainApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
